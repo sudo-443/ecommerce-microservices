@@ -12,6 +12,5 @@ app.use("/order", authMiddleware, createProxyMiddleware({ target: "http://localh
 app.use("/payment", authMiddleware,createProxyMiddleware({ target: "http://localhost:5005", changeOrigin: true }));
 
 app.get("/", (req, res) => res.send("API Gateway is running"));
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`API Gateway running on port http://localhost:${PORT}`));
